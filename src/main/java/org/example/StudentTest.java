@@ -67,27 +67,19 @@ public class StudentTest
                 input.nextLine();
             }
         }
-
-        if(arrayList.isEmpty())
+        Log.info("Display The Before Sort StudentTest:");
+        for (Student iterator : arrayList)
         {
-            Log.info("No Data Found");
-        }
-        else
-        {
-            Log.info("Display The StudentTest:");
-            for (Student iterator : arrayList) {
-                String print = "Name:" + iterator.getName() + " Age:" + iterator.getAge() + " GPA:" + iterator.getGpa();
-                Log.info(print);
-            }
-            Log.info("\n\nDisplay The Sort StudentTest:");
-            Collections.sort(arrayList, (o1, o2) -> Double.compare(o2.getGpa(), o1.getGpa()));
-            for (Student iterator : arrayList)
-            {
                 String print="Name:" + iterator.getName() + " Age:" + iterator.getAge() + " GPA:" + iterator.getGpa();
                 Log.info(print);
-            }
         }
-
+        Log.info("\n\nDisplay The After Sort StudentTest:");
+        Collections.sort(arrayList, (o1, o2) -> Double.compare(o2.getGpa(), o1.getGpa()));
+        for (Student iterator : arrayList)
+        {
+                String print="Name:" + iterator.getName() + " Age:" + iterator.getAge() + " GPA:" + iterator.getGpa();
+                Log.info(print);
+        }
 
     }
 }
